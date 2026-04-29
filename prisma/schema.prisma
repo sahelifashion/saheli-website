@@ -14,7 +14,10 @@ model Product {
   id          String   @id @default(cuid())
   name        String
   category    String
-  imageUrl    String
+  description String?
+  price       Float    @default(0)
+  imageUrl    String   // Thumbnail
+  images      String   @default("[]") // JSON stringified array of multiple images
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

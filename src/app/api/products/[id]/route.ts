@@ -12,11 +12,15 @@ export async function PUT(request: Request, { params }: { params: { id: string }
       data: {
         name: data.name,
         category: data.category,
+        description: data.description,
+        price: parseFloat(data.price) || 0,
         imageUrl: data.imageUrl,
+        images: data.images ? JSON.stringify(data.images) : undefined,
       }
     });
     return NextResponse.json(product);
   } catch (error) {
+    console.error("Update product error:", error);
     return NextResponse.json({ error: 'Failed to update product' }, { status: 500 });
   }
 }

@@ -46,15 +46,6 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Icons */}
-        <div className="flex items-center space-x-6 text-gray-700">
-          <button aria-label="Search" className="hover:text-brand-maroon transition-colors">
-            <Search size={20} strokeWidth={1.5} />
-          </button>
-          <button aria-label="Cart" className="hover:text-brand-maroon transition-colors">
-            <ShoppingBag size={20} strokeWidth={1.5} />
-          </button>
-        </div>
       </div>
     </nav>
   );

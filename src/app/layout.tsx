@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import FloatingSocials from "@/components/layout/FloatingSocials";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   title: "Saheli Fashion Jewellery",
-  description: "Timeless elegance made for you. Discover fashion jewellery that adds charm to every moment of yours.",
+  description: "Timeless Elegance. Made for You.",
 };
-
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({
   children,
@@ -26,11 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-sans">
+    <html lang="en">
+      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen flex flex-col`}>
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-24">
+          {children}
+        </main>
         <Footer />
+        <FloatingSocials />
       </body>
     </html>
   );

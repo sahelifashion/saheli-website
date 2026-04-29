@@ -10,6 +10,10 @@ export const siteContent = {
       { name: "ABOUT US", href: "/about" },
       { name: "CONTACT", href: "/contact" },
     ],
+    socialLinks: {
+      instagram: "https://instagram.com/sahelifashionjewellery",
+      whatsapp: "https://wa.me/1234567890",
+    }
   },
   home: {
     hero: {

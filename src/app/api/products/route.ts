@@ -21,11 +21,15 @@ export async function POST(request: Request) {
       data: {
         name: data.name,
         category: data.category,
+        description: data.description,
+        price: parseFloat(data.price) || 0,
         imageUrl: data.imageUrl,
+        images: data.images ? JSON.stringify(data.images) : "[]",
       }
     });
     return NextResponse.json(product, { status: 201 });
   } catch (error) {
+    console.error("Create product error:", error);
     return NextResponse.json({ error: 'Failed to create product' }, { status: 500 });
   }
 }
