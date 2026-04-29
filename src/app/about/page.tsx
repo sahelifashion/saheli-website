@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="bg-white p-12 rounded-2xl border border-[#EAE3DB] shadow-sm flex flex-col md:flex-row items-center text-left gap-12">
           <div className="w-full md:w-1/3">
              <img 
-               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+               src="founder.jpg" 
                alt={founder.name}
                className="w-full aspect-square object-cover rounded-full border-4 border-brand-cream shadow-md"
              />

@@ -12,7 +12,7 @@ export const siteContent = {
     ],
     socialLinks: {
       instagram: "https://instagram.com/sahelifashionjewellery",
-      whatsapp: "https://wa.me/1234567890",
+      whatsapp: "https://wa.me/919207060111",
     }
   },
   home: {
@@ -37,7 +37,7 @@ export const siteContent = {
     },
     founder: {
       sectionTag: "FOUNDER",
-      name: "Nisharajiv",
+      name: "Nisha Rajiv",
       description: "Saheli Fashion Jewellery was born from a passion for elegance and the belief that every woman deserves to shine. Our designs blend tradition with modernity, crafted with love and attention to detail.",
       ctaText: "KNOW MORE ABOUT US",
       ctaLink: "/about",
@@ -52,7 +52,7 @@ export const siteContent = {
   contact: {
     heading: "Get in Touch",
     email: "hello@sahelijewellery.com",
-    phone: "+1 234 567 890",
-    address: "123 Fashion Street, Style City, SC 12345"
+    phone: "+91 920 706 0111",
+    address: "Chalakudy, Thrissur, Kerala"
   }
 };

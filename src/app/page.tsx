@@ -95,7 +95,7 @@ export default function Home() {
           <FadeIn direction="right" className="w-full md:w-1/2 flex justify-center relative">
             <div className="w-[80%] max-w-sm border border-brand-gold rounded-[2rem] p-2 relative">
                <img 
-                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                 src="/founder.jpg" 
                  alt={founder.name}
                  className="w-full aspect-[4/5] object-cover rounded-[1.5rem]"
                />
