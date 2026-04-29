@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client';
+import FadeIn from "@/components/animations/FadeIn";
+import PageHeader from "@/components/layout/PageHeader";
 
 const prisma = new PrismaClient();
-
-import FadeIn from "@/components/animations/FadeIn";
 
 export const dynamic = 'force-dynamic';
 
@@ -16,10 +16,14 @@ export default async function GalleryPage() {
   const images = await fetchGallery();
 
   return (
-    <div className="min-h-screen bg-brand-cream pt-12 pb-24 px-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="font-serif text-5xl text-brand-maroon mb-4 text-center">Our Gallery</h1>
-        <div className="w-24 h-[1px] bg-brand-gold mx-auto mb-16"></div>
+    <div className="min-h-screen bg-brand-cream flex flex-col">
+      <PageHeader 
+        title="Our Gallery" 
+        tagline="A GLIMPSE OF ELEGANCE" 
+        bgImage="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+      />
+      <div className="w-full px-8 py-24">
+        <div className="max-w-6xl mx-auto">
 
         {images.length === 0 ? (
           <div className="text-center py-20 text-gray-500">
@@ -51,6 +55,7 @@ export default async function GalleryPage() {
             })}
           </div>
         )}
+      </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import FadeIn from "@/components/animations/FadeIn";
 import CollectionClient from "@/components/collections/CollectionClient";
+import PageHeader from "@/components/layout/PageHeader";
 
 export const dynamic = 'force-dynamic';
 
@@ -35,18 +36,16 @@ export default async function CollectionsPage() {
   const products = await fetchProducts();
 
   return (
-    <div className="w-full bg-brand-cream min-h-screen pt-16 pb-24 px-8">
-      <div className="max-w-7xl mx-auto">
-        <FadeIn direction="up" className="text-center mb-16">
-          <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
-            OUR COLLECTIONS
-          </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-brand-maroon">
-            Discover Your Style
-          </h1>
-        </FadeIn>
-
-        <CollectionClient initialProducts={products} />
+    <div className="w-full bg-brand-cream min-h-screen flex flex-col">
+      <PageHeader 
+        title="Discover Your Style" 
+        tagline="OUR COLLECTIONS" 
+        bgImage="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+      />
+      <div className="px-8 py-24">
+        <div className="max-w-7xl mx-auto">
+          <CollectionClient initialProducts={products} />
+        </div>
       </div>
     </div>
   );

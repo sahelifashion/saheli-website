@@ -65,7 +65,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
 
   // Whatsapp message text
   const getWhatsAppLink = (product: Product) => {
-    const message = encodeURIComponent(`Hi, I'm interested in the ${product.name} (${product.category}) priced at $${product.price}.`);
+    const message = encodeURIComponent(`Hi, I'm interested in the ${product.name} (${product.category}) priced at ₹${product.price}.`);
     return `${siteContent.global.socialLinks.whatsapp}?text=${message}`;
   };
 
@@ -130,7 +130,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 text-sm font-medium">${product.price}</p>
+                <p className="text-gray-600 text-sm font-medium">₹{product.price}</p>
               </div>
             </FadeIn>
           ))}
@@ -208,7 +208,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
                     {selectedProduct.name}
                   </h2>
                   <p className="text-2xl text-gray-800 mb-8 font-medium">
-                    ${selectedProduct.price.toFixed(2)}
+                    ₹{selectedProduct.price.toFixed(2)}
                   </p>
                   
                   {selectedProduct.description && (

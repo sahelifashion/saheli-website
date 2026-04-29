@@ -228,7 +228,7 @@ export default function AdminProducts() {
                   <h4 className="font-medium text-sm truncate">{p.name}</h4>
                   <div className="flex justify-between items-center mt-1">
                     <p className="text-xs text-gray-500">{p.category}</p>
-                    <p className="text-xs font-bold text-brand-maroon">${p.price}</p>
+                    <p className="text-xs font-bold text-brand-maroon">₹{p.price}</p>
                   </div>
                 </div>
                 <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
