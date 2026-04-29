@@ -35,7 +35,7 @@ export default function Home() {
         <div className="w-full md:w-[55%] h-[400px] md:h-full relative overflow-hidden">
           <FadeIn direction="none" delay={0.4} className="w-full h-full">
             <img 
-              src="https://images.unsplash.com/photo-1599643478524-fb66f70d00f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              src="https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg" 
               alt="Model wearing jewellery" 
               className="object-cover w-full h-full"
             />
@@ -60,7 +60,7 @@ export default function Home() {
               "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
               "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
               "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
-              "https://images.unsplash.com/photo-1605100804763-247f67b2548e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
+              "https://m.media-amazon.com/images/I/718B2IPDNxL._AC_UY1100_.jpg",
               "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
             ];
             return (
