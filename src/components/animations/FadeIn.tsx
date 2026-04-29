@@ -8,9 +8,10 @@ interface FadeInProps {
   delay?: number;
   direction?: "up" | "down" | "left" | "right" | "none";
   className?: string;
+  onClick?: () => void;
 }
 
-export default function FadeIn({ children, delay = 0, direction = "up", className = "" }: FadeInProps) {
+export default function FadeIn({ children, delay = 0, direction = "up", className = "", onClick }: FadeInProps) {
   const directionOffset = {
     up: { y: 40, x: 0 },
     down: { y: -40, x: 0 },
@@ -21,6 +22,7 @@ export default function FadeIn({ children, delay = 0, direction = "up", classNam
 
   return (
     <motion.div
+      onClick={onClick}
       initial={{ 
         opacity: 0, 
         ...directionOffset[direction]
