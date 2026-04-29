@@ -75,26 +75,6 @@ export default function AdminGallery() {
         <h2 className="text-xl font-bold mb-6 text-brand-maroon">Add Gallery Image</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Title (Optional)</label>
-            <input 
-              type="text" 
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className="w-full border border-gray-300 rounded-md p-2"
-              placeholder="e.g. Bridal Collection Shoot"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Price (Optional)</label>
-            <input 
-              type="text" 
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              className="w-full border border-gray-300 rounded-md p-2"
-              placeholder="e.g. $250.00"
-            />
-          </div>
-          <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Image *</label>
             {imageUrl ? (
               <div className="relative w-full h-32 rounded-lg overflow-hidden border border-gray-200">

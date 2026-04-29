@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CloudinaryUpload from "@/components/admin/CloudinaryUpload";
-import { Trash2 } from "lucide-react";
+import { Trash2, Edit2, X } from "lucide-react";
 
 type Product = {
   id: string;
@@ -24,6 +24,7 @@ export default function AdminProducts() {
   const [imageUrl, setImageUrl] = useState(""); // Main image
   const [images, setImages] = useState<string[]>([]); // Additional images
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   useEffect(() => {
     fetchProducts();
@@ -39,6 +40,30 @@ export default function AdminProducts() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleEdit = (prod: Product) => {
+    setEditingId(prod.id);
+    setName(prod.name);
+    setCategory(prod.category);
+    setDescription(prod.description || "");
+    setPrice(prod.price.toString());
+    setImageUrl(prod.imageUrl);
+    try {
+      setImages(JSON.parse(prod.images));
+    } catch(e) {
+      setImages([]);
+    }
+  };
+
+  const cancelEdit = () => {
+    setEditingId(null);
+    setName("");
+    setCategory("NECKLACES");
+    setDescription("");
+    setPrice("");
+    setImageUrl("");
+    setImages([]);
   };
 
   const handleAddImage = (url: string) => {
@@ -65,8 +90,10 @@ export default function AdminProducts() {
     
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/products", {
-        method: "POST",
+      const endpoint = editingId ? `/api/products/${editingId}` : "/api/products";
+      const method = editingId ? "PUT" : "POST";
+      const res = await fetch(endpoint, {
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
           name, 
@@ -78,15 +105,11 @@ export default function AdminProducts() {
         }),
       });
       if (res.ok) {
-        setName("");
-        setDescription("");
-        setPrice("");
-        setImageUrl("");
-        setImages([]);
+        cancelEdit();
         fetchProducts();
       }
     } catch (error) {
-      console.error("Failed to create product", error);
+      console.error("Failed to save product", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -103,10 +126,19 @@ export default function AdminProducts() {
   };
 
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col md:flex-row gap-8">
       {/* Form */}
-      <div className="w-1/3 bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-fit">
-        <h2 className="text-xl font-bold mb-6 text-brand-maroon">Add New Product</h2>
+      <div className="w-full md:w-1/3 bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-fit">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-bold text-brand-maroon">
+            {editingId ? "Edit Product" : "Add New Product"}
+          </h2>
+          {editingId && (
+            <button onClick={cancelEdit} className="text-gray-400 hover:text-gray-700">
+              <X size={20} />
+            </button>
+          )}
+        </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
@@ -177,13 +209,13 @@ export default function AdminProducts() {
             disabled={isSubmitting || images.length === 0}
             className="w-full bg-brand-maroon text-white py-2 rounded-md hover:bg-brand-maroon/90 disabled:opacity-50"
           >
-            {isSubmitting ? "Saving..." : "Save Product"}
+            {isSubmitting ? "Saving..." : (editingId ? "Update Product" : "Save Product")}
           </button>
         </form>
       </div>
 
       {/* List */}
-      <div className="w-2/3 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+      <div className="w-full md:w-2/3 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
         <h2 className="text-xl font-bold mb-6 text-brand-maroon">All Products</h2>
         {loading ? (
           <p>Loading products...</p>
@@ -199,12 +231,20 @@ export default function AdminProducts() {
                     <p className="text-xs font-bold text-brand-maroon">${p.price}</p>
                   </div>
                 </div>
-                <button 
-                  onClick={() => handleDelete(p.id)}
-                  className="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full text-red-500 opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-red-50"
-                >
-                  <Trash2 size={16} />
-                </button>
+                <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button 
+                    onClick={() => handleEdit(p)}
+                    className="bg-white/90 p-1.5 rounded-full text-blue-500 shadow-sm hover:bg-blue-50"
+                  >
+                    <Edit2 size={16} />
+                  </button>
+                  <button 
+                    onClick={() => handleDelete(p.id)}
+                    className="bg-white/90 p-1.5 rounded-full text-red-500 shadow-sm hover:bg-red-50"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
               </div>
             ))}
             {products.length === 0 && <p className="text-gray-500 col-span-full">No products found.</p>}
