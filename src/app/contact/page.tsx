@@ -16,7 +16,7 @@ export default function ContactPage() {
     const data = new FormData(form);
     
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch("https://formspree.io/f/mlgaqzwz", {
         method: "POST",
         body: data,
         headers: {
@@ -27,10 +27,13 @@ export default function ContactPage() {
         setIsSubmitted(true);
         form.reset();
       } else {
-        alert("Oops! There was a problem submitting your form");
+        const errorData = await response.json();
+        console.error("Formspree error response:", errorData);
+        alert("Oops! There was a problem submitting your form. Please try again.");
       }
     } catch (error) {
-      alert("Oops! There was a problem submitting your form");
+      console.error("Form fetch error:", error);
+      alert("Oops! There was a problem submitting your form. Check your internet connection.");
     } finally {
       setIsSubmitting(false);
     }
