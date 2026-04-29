@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
-  const { about, home: { founder } } = siteContent;
+  const { about } = siteContent;
+  const { founder } = about;
 
   return (
     <div className="w-full bg-brand-cream min-h-screen flex flex-col">
@@ -71,7 +72,7 @@ export default function AboutPage() {
              <img 
                src="/founder.jpg" 
                alt={founder.name}
-               className="w-48 h-48 md:w-full md:aspect-square object-cover rounded-full border-4 border-brand-cream shadow-xl"
+               className="w-32 h-64 md:w-full object-cover rounded-2xl border-4 border-brand-cream shadow-xl"
              />
           </div>
           <div className="w-full md:w-2/3">

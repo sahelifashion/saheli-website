@@ -170,7 +170,14 @@ export const siteContent = {
     heading: "About Saheli Fashion Jewellery",
     content: "We believe in creating timeless pieces that bring out your inner elegance. Started with a vision to blend traditional craftsmanship with modern aesthetics, every piece is designed with utmost care.",
     vision: "To be the most trusted and loved fashion jewellery brand globally, celebrated for our innovative designs and uncompromising quality.",
-    mission: "Our mission is to empower individuals to express their unique style through beautifully crafted, affordable, and accessible fashion jewellery."
+    mission: "Our mission is to empower individuals to express their unique style through beautifully crafted, affordable, and accessible fashion jewellery.",
+    founder: {
+      sectionTag: "FOUNDER",
+      name: "Nisha Rajiv",
+      description: "Saheli Fashion Jewellery was born from a passion for elegance and the belief that every woman deserves to shine. Our designs blend tradition with modernity, crafted with love and attention to detail.",
+      ctaText: "KNOW MORE ABOUT US",
+      ctaLink: "/about",
+    }
   },
   contact: {
     heading: "Get in Touch",
