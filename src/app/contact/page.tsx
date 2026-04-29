@@ -14,13 +14,15 @@ export default function ContactPage() {
     setIsSubmitting(true);
     const form = e.currentTarget;
     const data = new FormData(form);
+    const jsonData = Object.fromEntries(data.entries());
     
     try {
       const response = await fetch("https://formspree.io/f/mlgaqzwz", {
         method: "POST",
-        body: data,
+        body: JSON.stringify(jsonData),
         headers: {
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
         }
       });
       if (response.ok) {
