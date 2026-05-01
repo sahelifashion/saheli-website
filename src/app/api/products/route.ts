@@ -25,6 +25,7 @@ export async function POST(request: Request) {
         price: parseFloat(data.price) || 0,
         imageUrl: data.imageUrl,
         images: data.images ? JSON.stringify(data.images) : "[]",
+        inStock: data.inStock !== undefined ? data.inStock : true,
       }
     });
     return NextResponse.json(product, { status: 201 });

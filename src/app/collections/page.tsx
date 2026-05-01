@@ -9,6 +9,7 @@ const prisma = new PrismaClient();
 
 async function fetchProducts() {
   const products = await prisma.product.findMany({
+    where: { inStock: true },
     orderBy: { createdAt: 'desc' }
   });
   

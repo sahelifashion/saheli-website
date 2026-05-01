@@ -12,6 +12,7 @@ type Product = {
   price: number;
   imageUrl: string;
   images: string; // JSON string
+  inStock: boolean;
 };
 
 export default function AdminProducts() {
@@ -23,6 +24,7 @@ export default function AdminProducts() {
   const [price, setPrice] = useState("");
   const [imageUrl, setImageUrl] = useState(""); // Main image
   const [images, setImages] = useState<string[]>([]); // Additional images
+  const [inStock, setInStock] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
 
@@ -49,6 +51,7 @@ export default function AdminProducts() {
     setDescription(prod.description || "");
     setPrice(prod.price.toString());
     setImageUrl(prod.imageUrl);
+    setInStock(prod.inStock ?? true);
     try {
       setImages(JSON.parse(prod.images));
     } catch(e) {
@@ -64,6 +67,7 @@ export default function AdminProducts() {
     setPrice("");
     setImageUrl("");
     setImages([]);
+    setInStock(true);
   };
 
   const handleAddImage = (url: string) => {
@@ -101,7 +105,8 @@ export default function AdminProducts() {
           description, 
           price: parseFloat(price) || 0, 
           imageUrl, 
-          images 
+          images,
+          inStock
         }),
       });
       if (res.ok) {
@@ -188,6 +193,18 @@ export default function AdminProducts() {
               />
             </div>
           </div>
+          <div className="flex items-center gap-2">
+            <input 
+              type="checkbox" 
+              id="inStock"
+              checked={inStock}
+              onChange={(e) => setInStock(e.target.checked)}
+              className="w-4 h-4 text-brand-maroon focus:ring-brand-maroon border-gray-300 rounded"
+            />
+            <label htmlFor="inStock" className="text-sm font-medium text-gray-700 cursor-pointer">
+              Product is in stock
+            </label>
+          </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Images</label>
             <div className="flex flex-wrap gap-2 mb-2">
@@ -227,7 +244,7 @@ export default function AdminProducts() {
                 <div className="p-3">
                   <h4 className="font-medium text-sm truncate">{p.name}</h4>
                   <div className="flex justify-between items-center mt-1">
-                    <p className="text-xs text-gray-500">{p.category}</p>
+                    <p className="text-xs text-gray-500">{p.category} {p.inStock === false ? '• Out of Stock' : ''}</p>
                     <p className="text-xs font-bold text-brand-maroon">₹{p.price}</p>
                   </div>
                 </div>

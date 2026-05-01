@@ -19,6 +19,7 @@ model Product {
   price       Float    @default(0)
   imageUrl    String   // Thumbnail
   images      String   @default("[]") // JSON stringified array of multiple images
+  inStock     Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

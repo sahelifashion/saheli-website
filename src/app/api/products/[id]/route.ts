@@ -16,6 +16,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         price: parseFloat(data.price) || 0,
         imageUrl: data.imageUrl,
         images: data.images ? JSON.stringify(data.images) : undefined,
+        inStock: data.inStock !== undefined ? data.inStock : undefined,
       }
     });
     return NextResponse.json(product);
