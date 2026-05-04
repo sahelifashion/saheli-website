@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles, ShieldCheck, Truck, HeartHandshake, Star } from "
 import { siteContent } from "@/data/content";
 import FadeIn from "@/components/animations/FadeIn";
 import { PrismaClient } from "@prisma/client";
+import CategoryTabSwitcher from "@/components/CategoryTabSwitcher";
 
 const prisma = new PrismaClient();
 
@@ -27,9 +28,42 @@ async function fetchFeaturedProducts() {
   }
 }
 
+async function fetchProductsByCategories() {
+  const categories = [
+    "Traditionel Jewellery",
+    "Anti-tarnish",
+    "Reception Jewellery (AD-Stone)",
+    "Boys Collection"
+  ];
+  
+  const productsByCategory: Record<string, any[]> = {};
+  
+  try {
+    for (const category of categories) {
+      const products = await prisma.product.findMany({
+        where: { category, inStock: true },
+        orderBy: { createdAt: 'desc' },
+        take: 4
+      });
+      productsByCategory[category] = products.map(p => ({
+        id: p.id,
+        name: p.name,
+        category: p.category,
+        price: p.price,
+        imageUrl: p.imageUrl,
+      }));
+    }
+  } catch (e) {
+    console.error("Failed to fetch products by categories", e);
+  }
+  
+  return { productsByCategory, categories };
+}
+
 export default async function Home() {
   const { hero, collections, aboutSaheli, whyChooseUs, testimonials } = siteContent.home;
   const featuredProducts = await fetchFeaturedProducts();
+  const { productsByCategory, categories } = await fetchProductsByCategories();
 
   const iconMap: Record<string, React.ReactNode> = {
     Sparkles: <Sparkles className="w-8 h-8" />,
@@ -75,47 +109,19 @@ export default async function Home() {
       </section>
 
       {/* 2. Collections Section */}
-      <section className="w-full py-24 px-8 bg-brand-cream text-center">
-        <FadeIn direction="up">
+      <section className="w-full py-24 px-8 bg-brand-cream flex flex-col items-center">
+        <FadeIn direction="up" className="text-center mb-16">
           <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
             {collections.sectionTag}
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon">
             {collections.heading}
           </h2>
         </FadeIn>
         
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 mb-16">
-          {collections.categories.map((cat, index) => {
-            const placeholders = [
-              "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
-              "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
-              "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
-              "https://m.media-amazon.com/images/I/718B2IPDNxL._AC_UY1100_.jpg",
-              "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
-            ];
-            return (
-              <FadeIn key={cat.name} direction="up" delay={0.1 * index} className="flex flex-col items-center group cursor-pointer">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-[#EAE3DB] p-2 mb-6 transition-transform duration-300 group-hover:scale-105">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                    <img src={placeholders[index]} alt={cat.name} className="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <span className="text-brand-maroon tracking-widest text-sm font-medium">{cat.name}</span>
-              </FadeIn>
-            );
-          })}
+        <div className="max-w-6xl w-full mx-auto">
+          <CategoryTabSwitcher productsByCategory={productsByCategory} categories={categories} />
         </div>
-
-        <FadeIn direction="up" delay={0.6}>
-          <Link 
-            href={collections.ctaLink}
-            className="inline-flex items-center border border-brand-maroon text-brand-maroon rounded-full px-8 py-4 text-sm font-medium tracking-widest hover:bg-brand-maroon hover:text-brand-cream transition-colors"
-          >
-            {collections.ctaText}
-            <ArrowRight className="ml-4 w-4 h-4" />
-          </Link>
-        </FadeIn>
       </section>
 
       {/* 3. About Saheli Section */}

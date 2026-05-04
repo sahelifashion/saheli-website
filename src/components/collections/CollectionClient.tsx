@@ -72,8 +72,23 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
   return (
     <div className="w-full">
       {/* Filters & Sort Controls */}
-      <FadeIn direction="down" className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
-        <div className="flex flex-wrap justify-center gap-2">
+      <FadeIn direction="down" className="flex flex-col gap-6 mb-12">
+        <div className="flex justify-between items-center w-full border-b border-[#EAE3DB] pb-4">
+          <span className="text-sm font-medium text-gray-500">
+            Showing {displayedProducts.length} product{displayedProducts.length !== 1 ? 's' : ''}
+          </span>
+          <select 
+            value={sortBy} 
+            onChange={(e) => setSortBy(e.target.value)}
+            className="border border-brand-maroon/30 bg-transparent text-brand-maroon text-sm rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-brand-maroon"
+          >
+            <option value="newest">Sort by: Newest</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
           {categories.map(cat => (
             <button
               key={cat}
@@ -87,17 +102,6 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
               {cat}
             </button>
           ))}
-        </div>
-        <div>
-          <select 
-            value={sortBy} 
-            onChange={(e) => setSortBy(e.target.value)}
-            className="border border-brand-maroon/30 bg-transparent text-brand-maroon text-sm rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-brand-maroon"
-          >
-            <option value="newest">Sort by: Newest</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-          </select>
         </div>
       </FadeIn>
 

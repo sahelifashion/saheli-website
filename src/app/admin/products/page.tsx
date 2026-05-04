@@ -19,7 +19,7 @@ export default function AdminProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("NECKLACES");
+  const [category, setCategory] = useState("Traditionel jewellery");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [imageUrl, setImageUrl] = useState(""); // Main image
@@ -52,17 +52,24 @@ export default function AdminProducts() {
     setPrice(prod.price.toString());
     setImageUrl(prod.imageUrl);
     setInStock(prod.inStock ?? true);
+    let parsedImages: string[] = [];
     try {
-      setImages(JSON.parse(prod.images));
-    } catch(e) {
-      setImages([]);
+      if (prod.images) {
+        parsedImages = JSON.parse(prod.images);
+      }
+    } catch(e) {}
+    
+    if (prod.imageUrl && !parsedImages.includes(prod.imageUrl)) {
+      parsedImages.unshift(prod.imageUrl);
     }
+    
+    setImages(parsedImages);
   };
 
   const cancelEdit = () => {
     setEditingId(null);
     setName("");
-    setCategory("NECKLACES");
+    setCategory("Traditionel Jewellery");
     setDescription("");
     setPrice("");
     setImageUrl("");
@@ -163,11 +170,10 @@ export default function AdminProducts() {
               onChange={(e) => setCategory(e.target.value)}
               className="w-full border border-gray-300 rounded-md p-2"
             >
-              <option value="NECKLACES">Necklaces</option>
-              <option value="EARRINGS">Earrings</option>
-              <option value="BANGLES">Bangles</option>
-              <option value="RINGS">Rings</option>
-              <option value="BRACELETS">Bracelets</option>
+              <option value="Traditionel Jewellery">Traditionel Jewellery</option>
+              <option value="Anti-tarnish">Anti-tarnish</option>
+              <option value="Reception Jewellery (AD-Stone)">Reception Jewellery (AD-Stone)</option>
+              <option value="Boys Collection">Boys Collection</option>
             </select>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -223,7 +229,7 @@ export default function AdminProducts() {
           </div>
           <button 
             type="submit" 
-            disabled={isSubmitting || images.length === 0}
+            disabled={isSubmitting || !imageUrl}
             className="w-full bg-brand-maroon text-white py-2 rounded-md hover:bg-brand-maroon/90 disabled:opacity-50"
           >
             {isSubmitting ? "Saving..." : (editingId ? "Update Product" : "Save Product")}
