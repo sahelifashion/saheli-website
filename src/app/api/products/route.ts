@@ -21,6 +21,7 @@ export async function POST(request: Request) {
       data: {
         name: data.name,
         category: data.category,
+        subCategory: data.subCategory,
         description: data.description,
         price: parseFloat(data.price) || 0,
         imageUrl: data.imageUrl,

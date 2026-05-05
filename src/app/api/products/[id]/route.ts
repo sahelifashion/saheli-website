@@ -12,6 +12,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
       data: {
         name: data.name,
         category: data.category,
+        subCategory: data.subCategory,
         description: data.description,
         price: parseFloat(data.price) || 0,
         imageUrl: data.imageUrl,

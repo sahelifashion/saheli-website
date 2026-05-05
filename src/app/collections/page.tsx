@@ -25,6 +25,7 @@ async function fetchProducts() {
       id: p.id,
       name: p.name,
       category: p.category,
+      subCategory: p.subCategory,
       description: p.description,
       price: p.price,
       imageUrl: p.imageUrl,

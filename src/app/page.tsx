@@ -19,6 +19,7 @@ async function fetchFeaturedProducts() {
       id: p.id,
       name: p.name,
       category: p.category,
+      subCategory: p.subCategory,
       price: p.price,
       imageUrl: p.imageUrl,
     }));
@@ -49,6 +50,7 @@ async function fetchProductsByCategories() {
         id: p.id,
         name: p.name,
         category: p.category,
+        subCategory: p.subCategory,
         price: p.price,
         imageUrl: p.imageUrl,
       }));
@@ -231,7 +233,7 @@ export default async function Home() {
                     </div>
                     <div className="text-center">
                       <span className="text-brand-gold text-[10px] uppercase tracking-[0.2em] block mb-1">
-                        {product.category}
+                        {product.category}{product.subCategory ? ` • ${product.subCategory}` : ''}
                       </span>
                       <h3 className="font-serif text-lg text-brand-maroon mb-1 group-hover:text-brand-gold transition-colors">
                         {product.name}

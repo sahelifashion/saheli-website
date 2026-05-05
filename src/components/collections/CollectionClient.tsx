@@ -10,6 +10,7 @@ type Product = {
   id: string;
   name: string;
   category: string;
+  subCategory: string | null;
   description: string | null;
   price: number;
   imageUrl: string;
@@ -18,6 +19,7 @@ type Product = {
 
 export default function CollectionClient({ initialProducts }: { initialProducts: Product[] }) {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [selectedSubCategory, setSelectedSubCategory] = useState("ALL");
   const [sortBy, setSortBy] = useState("newest");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -30,6 +32,18 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
   
   if (selectedCategory !== "ALL") {
     displayedProducts = displayedProducts.filter(p => p.category === selectedCategory);
+  }
+
+  if (selectedSubCategory !== "ALL") {
+    displayedProducts = displayedProducts.filter(p => p.subCategory === selectedSubCategory);
+  }
+
+  let subCategories = ["ALL"];
+  if (selectedCategory !== "ALL") {
+    const subs = initialProducts
+      .filter(p => p.category === selectedCategory && p.subCategory)
+      .map(p => p.subCategory as string);
+    subCategories = ["ALL", ...Array.from(new Set(subs))];
   }
 
   if (sortBy === "price-asc") {
@@ -92,7 +106,10 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => {
+                setSelectedCategory(cat);
+                setSelectedSubCategory("ALL");
+              }}
               className={`px-6 py-2 rounded-full text-xs font-medium tracking-widest transition-colors border ${
                 selectedCategory === cat 
                   ? "bg-brand-maroon text-brand-cream border-brand-maroon" 
@@ -103,6 +120,31 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
             </button>
           ))}
         </div>
+        
+        <AnimatePresence>
+          {selectedCategory !== "ALL" && subCategories.length > 1 && (
+            <motion.div 
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="flex flex-wrap gap-2 pt-2 border-t border-[#EAE3DB] mt-2 overflow-hidden"
+            >
+              {subCategories.map(subCat => (
+                <button
+                  key={subCat}
+                  onClick={() => setSelectedSubCategory(subCat)}
+                  className={`px-4 py-1.5 rounded-full text-[11px] font-medium tracking-widest transition-colors border ${
+                    selectedSubCategory === subCat 
+                      ? "bg-brand-gold text-white border-brand-gold" 
+                      : "bg-transparent text-gray-500 border-gray-300 hover:border-brand-gold hover:text-brand-gold"
+                  }`}
+                >
+                  {subCat}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </FadeIn>
 
       {/* Product Grid */}
@@ -129,7 +171,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
               </div>
               <div className="text-center">
                 <span className="text-brand-gold text-[10px] uppercase tracking-[0.2em] block mb-1">
-                  {product.category}
+                  {product.category}{product.subCategory ? ` • ${product.subCategory}` : ''}
                 </span>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">
                   {product.name}
@@ -206,7 +248,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
 
                 <div className="mt-8 md:mt-0 flex-grow">
                   <span className="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">
-                    {selectedProduct.category}
+                    {selectedProduct.category}{selectedProduct.subCategory ? ` • ${selectedProduct.subCategory}` : ''}
                   </span>
                   <h2 className="font-serif text-3xl md:text-4xl text-brand-maroon mb-4">
                     {selectedProduct.name}
