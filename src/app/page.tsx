@@ -12,6 +12,7 @@ async function fetchFeaturedProducts() {
     const products = await prisma.product.findMany({
       where: { inStock: true },
       orderBy: { createdAt: 'desc' },
+      distinct: ['category'],
       take: 4
     });
     
