@@ -1,7 +1,7 @@
 "use client";
 
 import { siteContent } from "@/data/content";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
 import { useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
 
@@ -18,7 +18,7 @@ export default function ContactPage() {
     const jsonData = Object.fromEntries(data.entries());
     
     try {
-      const response = await fetch("https://formspree.io/f/mlgaqzwz", {
+      const response = await fetch("https://formspree.io/f/xwvygwdw", {
         method: "POST",
         body: JSON.stringify(jsonData),
         headers: {
@@ -66,6 +66,16 @@ export default function ContactPage() {
           <div className="w-full lg:w-1/3 flex flex-col gap-6">
             <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+                <MapPin size={20} />
+              </div>
+              <div>
+                <h3 className="font-serif text-lg text-brand-maroon mb-1">Visit Us</h3>
+                <p className="text-sm text-brand-gold hover:text-brand-maroon transition-colors whitespace-pre-line">{contact.address}</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
                 <Mail size={20} />
               </div>
               <div>
@@ -93,6 +103,18 @@ export default function ContactPage() {
                 <a href={siteContent.global.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">@sahelifashionjewellery</a>
               </div>
             </div>
+
+            {siteContent.global.socialLinks.facebook && (
+              <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg text-brand-maroon mb-1">Facebook</h3>
+                  <a href={siteContent.global.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">@sahelifashionjewellery</a>
+                </div>
+              </div>
+            )}
 
             <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
@@ -125,7 +147,7 @@ export default function ContactPage() {
               ) : (
                 <>
                   <h3 className="font-serif text-2xl text-brand-maroon mb-6">Send an Enquiry</h3>
-                  <form action="https://formspree.io/f/mlgaqzwz" onSubmit={handleSubmit} className="space-y-6">
+                  <form action="https://formspree.io/f/xwvygwdw" onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
@@ -155,7 +177,7 @@ export default function ContactPage() {
             {/* Map */}
             <div className="w-full h-[300px] rounded-2xl overflow-hidden border border-[#EAE3DB] shadow-sm">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.8521798365696!2d76.32742917540274!3d10.291799889816172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08044ddb51f0c3%3A0xeb3f179b5c3e7b!2sChalakudy%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                src="https://www.google.com/maps?q=10.3070105,76.3340589&z=15&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

@@ -274,7 +274,6 @@ export default async function Home() {
                 <p className="text-gray-600 italic leading-relaxed mb-6 flex-grow">"{review.text}"</p>
                 <div>
                   <h4 className="font-serif text-lg text-brand-maroon">{review.name}</h4>
-                  <span className="text-xs text-brand-gold uppercase tracking-widest">{review.location}</span>
                 </div>
               </div>
             ))}

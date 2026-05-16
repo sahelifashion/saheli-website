@@ -25,14 +25,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center justify-center space-y-0.5" onClick={closeMobileMenu}>
-          <div className="text-brand-gold text-2xl">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="mb-1">
-               <path d="M12 2C8.13401 2 5 5.13401 5 9C5 12.866 12 22 12 22C12 22 19 12.866 19 9C19 5.13401 15.866 2 12 2Z" />
-               <circle cx="12" cy="9" r="3" />
-             </svg>
-          </div>
-          <span className="font-sans text-brand-maroon text-xl font-bold tracking-widest leading-none">{logoText}</span>
-          <span className="font-sans text-brand-gold text-[0.6rem] tracking-[0.2em] leading-none uppercase">{brandName.replace(logoText, '').trim()}</span>
+          <img src="/logo.jpg" alt={brandName} className="h-16 w-auto object-contain rounded" />
         </Link>
 
         {/* Desktop Navigation Links */}

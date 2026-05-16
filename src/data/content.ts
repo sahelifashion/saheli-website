@@ -13,6 +13,7 @@ export const siteContent = {
     socialLinks: {
       instagram: "https://instagram.com/sahelifashionjewellery",
       whatsapp: "https://wa.me/919207060111",
+      facebook: "https://www.facebook.com/sahelifashionjewellery",
     }
   },
   home: {
@@ -74,94 +75,44 @@ export const siteContent = {
       heading: "Words From Our Family",
       reviews: [
         {
-          name: "Anjali M.",
-          location: "Kochi, Kerala",
-          text: "The necklace I bought for my wedding was absolutely stunning. It felt so premium and perfectly matched my attire!"
+          name: "Saritha Chandran",
+          text: "Trendy and affordable jewellery with fast delivery"
         },
         {
-          name: "Priya S.",
-          location: "Bangalore",
-          text: "I am amazed by the quality of these bangles. They shine like real gold and the design is just so elegant."
+          name: "Aswatha T U",
+          text: "Good quality ornaments. Packing is excellent."
         },
         {
-          name: "Meera K.",
-          location: "Dubai, UAE",
-          text: "Saheli's customer service is top-notch. The earrings arrived perfectly packaged and are now my absolute favorite."
+          name: "Agnes Judeson",
+          text: "Very good product. Quality products. Packing is very good. Their lightweight collections are perfect."
         },
         {
-          name: "Lakshmi T.",
-          location: "Chennai",
-          text: "Beautiful craftsmanship. The attention to detail in their antique collection is truly commendable."
+          name: "Arya P R",
+          text: "The set I purchased was really good with premium quality."
         },
         {
-          name: "Nisha R.",
-          location: "Hyderabad",
-          text: "Absolutely loved the ring I ordered. The finish is flawless and it looks even better in person."
+          name: "Chadrika Mr",
+          text: "Nice product. Good quality and low price."
         },
         {
-          name: "Aparna V.",
-          location: "Trivandrum, Kerala",
-          text: "The jewelry feels so lightweight yet premium. Perfect for daily wear and special occasions."
+          name: "krishna pranav",
+          text: "Saheli Fashion Jewellery offers trendy and affordable imitation jewellery, ideal for weddings and festive wear. The designs are stylish and budget-friendly."
         },
         {
-          name: "Sneha P.",
-          location: "Mumbai",
-          text: "Got so many compliments on my necklace! The design is unique and really stands out."
+          name: "Soniya P. P",
+          text: "I ordered a chain and bracelet. The output is awesome. Beautiful, comfortable, and lightweight to wear."
         },
         {
-          name: "Divya N.",
-          location: "Coimbatore",
-          text: "Packaging was beautiful and secure. The product quality exceeded my expectations."
+          name: "Sabitha Dipu",
+          text: "Very happy with my Saheli bracelet purchase. Stylish finish, good craftsmanship, and worth the price."
         },
         {
-          name: "Fathima K.",
-          location: "Kozhikode, Kerala",
-          text: "This is my second purchase and I'm already planning my third! The designs are just breathtaking."
+          name: "reshma santhosh",
+          text: "Beautiful collections with unique style. Packaging was neat and delivery was quick. Highly recommended."
         },
         {
-          name: "Riya S.",
-          location: "Indore, Madhya Pradesh",
-          text: "The delivery was super fast and the earrings are even more gorgeous in real life. Highly recommend!"
-        },
-        {
-          name: "Simran Kaur",
-          location: "Amritsar, Punjab",
-          text: "Absolutely in love with the collection. It perfectly balances traditional vibes with a modern touch."
-        },
-        {
-          name: "Sneha M.",
-          location: "Mangalore, Karnataka",
-          text: "The customer service was excellent and they helped me choose the perfect set for my cousin's wedding."
-        },
-        {
-          name: "Tanvi L.",
-          location: "Pune, Maharashtra",
-          text: "Affordable and elegant. I wear their necklace almost every day and get compliments constantly."
-        },
-        {
-          name: "Kavya R.",
-          location: "Vijayawada, Andhra Pradesh",
-          text: "The quality feels premium and the designs are very unique compared to what's available in the market."
-        },
-        {
-          name: "Shweta G.",
-          location: "Ahmedabad, Gujarat",
-          text: "I ordered a bridal set and it was just perfect! The details and finish were exquisite."
-        },
-        {
-          name: "Aruna V.",
-          location: "Gwalior, Madhya Pradesh",
-          text: "Lightweight, stylish, and the perfect pop of color for any outfit. Must-have accessories!"
-        },
-        {
-          name: "Isha J.",
-          location: "Agra, Uttar Pradesh",
-          text: "Excellent collection for festive wear. The jewelry adds that perfect ethnic touch to my look."
-        },
-        {
-          name: "Ayesha K.",
-          location: "Ludhiana, Punjab",
-          text: "The best place to find fashion jewelry that looks luxurious but is easy on the pocket. Will shop again soon!"
+          name: "Mary Manisha",
+          text: "Very beautiful jhumka earrings with good quality and nice finishing. Perfect for functions and weddings. Highly recommended."
         }
       ]
     }
@@ -181,8 +132,8 @@ export const siteContent = {
   },
   contact: {
     heading: "Get in Touch",
-    email: "hello@sahelijewellery.com",
-    phone: "+91 920 706 0111",
-    address: "Chalakudy, Thrissur, Kerala"
+    email: "saheli.fj@gmail.com",
+    phone: "919207060111",
+    address: "Nisha MV,\nChiraykkal Manavalan,\nNear Railway station,\n680307 Pincode,\n9207060111"
   }
 };
