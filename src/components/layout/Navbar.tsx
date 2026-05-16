@@ -20,7 +20,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-[#8E214C] border-b border-white/10 py-4 px-8 sticky top-0 z-50">
+    <nav className="w-full bg-brand-maroon border-b border-white/10 py-4 px-8 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
@@ -60,7 +60,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#8E214C] border-b border-white/10 shadow-lg py-4 px-8 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-brand-maroon border-b border-white/10 shadow-lg py-4 px-8 flex flex-col space-y-4">
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
             return (

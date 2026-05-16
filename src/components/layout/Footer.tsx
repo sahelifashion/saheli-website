@@ -6,7 +6,7 @@ export default function Footer() {
   const { email, phone, address } = siteContent.contact;
 
   return (
-    <footer className="bg-[#8E214C] text-brand-cream py-16 px-8 mt-auto">
+    <footer className="bg-brand-maroon text-brand-cream py-16 px-8 mt-auto">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
         <div>
