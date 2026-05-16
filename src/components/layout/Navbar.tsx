@@ -20,12 +20,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-brand-cream border-b border-[#EAE3DB] py-4 px-8 sticky top-0 z-50">
+    <nav className="w-full bg-[#8E214C] border-b border-white/10 py-4 px-8 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center justify-center space-y-0.5" onClick={closeMobileMenu}>
-          <img src="/logo.jpg" alt={brandName} className="h-16 w-auto object-contain rounded" />
+          <img src="/logo.jpg" alt={brandName} className="h-16 md:h-24 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -37,7 +37,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href}
                 className={`text-sm tracking-wider uppercase font-medium transition-colors relative pb-2
-                  ${isActive ? 'text-brand-maroon' : 'text-gray-600 hover:text-brand-maroon'}
+                  ${isActive ? 'text-brand-gold' : 'text-brand-cream/80 hover:text-brand-cream'}
                 `}
               >
                 {link.name}
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-brand-maroon focus:outline-none"
+          className="md:hidden text-brand-cream focus:outline-none"
           onClick={toggleMobileMenu}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -60,7 +60,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-brand-cream border-b border-[#EAE3DB] shadow-lg py-4 px-8 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#8E214C] border-b border-white/10 shadow-lg py-4 px-8 flex flex-col space-y-4">
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
             return (
@@ -69,7 +69,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={closeMobileMenu}
                 className={`text-sm tracking-wider uppercase font-medium transition-colors block py-2
-                  ${isActive ? 'text-brand-maroon font-bold' : 'text-gray-600'}
+                  ${isActive ? 'text-brand-gold font-bold' : 'text-brand-cream/80 hover:text-brand-cream'}
                 `}
               >
                 {link.name}
