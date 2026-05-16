@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
         <div>
-          <img src="/logo.jpg" alt={brandName} className="h-24 md:h-32 w-auto object-contain mb-6" />
+          <img src="/logo.jpg" alt={brandName} className="h-32 md:h-40 w-auto object-contain mb-6" />
           <p className="text-sm text-brand-cream/80 max-w-sm leading-relaxed">
             {siteContent.about.content}
           </p>
