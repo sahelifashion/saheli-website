@@ -24,11 +24,22 @@ export default function AdminProducts() {
   const [subCategory, setSubCategory] = useState("Neck peace");
   const [description, setDescription] = useState("");
 
+  const commonSubCategories = [
+    "Earrings",
+    "Neck peace",
+    "Rings",
+    "Bracelet",
+    "Kada",
+    "Bangles",
+    "Hip chain",
+    "Anklets"
+  ];
+
   const categorySubCategories: Record<string, string[]> = {
-    "Traditionel Jewellery": ["Neck Peace", "Earrings", "Bangle", "Rings", "Hip-chain", "Anklets"],
-    "Anti-tarnish": ["Neck Peace", "Kada", "Bracelet", "Rings", "Anklets"],
-    "Reception Jewellery (AD-Stone)": ["Neck Peace", "Earrings", "Rings", "Bangle"],
-    "Boys Collection": ["Chain", "Bracelet", "Kada", "Rings", "Earrings"]
+    "Traditionel Jewellery": commonSubCategories,
+    "Anti-tarnish": commonSubCategories,
+    "Reception Jewellery (AD-Stone)": commonSubCategories,
+    "Boys Collection": commonSubCategories
   };
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
