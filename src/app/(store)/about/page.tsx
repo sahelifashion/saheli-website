@@ -13,7 +13,7 @@ export default function AboutPage() {
       <PageHeader 
         title="Our Story" 
         tagline="KNOW ABOUT SAHELI" 
-        bgImage="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
       />
 
       <div className="max-w-6xl mx-auto px-8 py-24">

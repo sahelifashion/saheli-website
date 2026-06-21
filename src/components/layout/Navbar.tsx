@@ -20,12 +20,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-brand-maroon border-b border-white/10 py-4 px-8 sticky top-0 z-50">
+    <nav className="w-full bg-brand-maroon border-b border-white/10 py-3 px-8 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center justify-center space-y-0.5" onClick={closeMobileMenu}>
-          <img src="/logo.jpg" alt={brandName} className="h-28 md:h-36 w-auto object-contain" />
+          <img src="/logo.jpg" alt={brandName} className="h-16 md:h-22 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`text-sm tracking-wider uppercase font-medium transition-colors relative pb-2
+                className={`text-base tracking-wider uppercase font-medium transition-colors relative pb-2
                   ${isActive ? 'text-brand-gold' : 'text-brand-cream/80 hover:text-brand-cream'}
                 `}
               >
@@ -68,7 +68,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href}
                 onClick={closeMobileMenu}
-                className={`text-sm tracking-wider uppercase font-medium transition-colors block py-2
+                className={`text-base tracking-wider uppercase font-medium transition-colors block py-2
                   ${isActive ? 'text-brand-gold font-bold' : 'text-brand-cream/80 hover:text-brand-cream'}
                 `}
               >

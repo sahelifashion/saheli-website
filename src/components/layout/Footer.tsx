@@ -6,23 +6,23 @@ export default function Footer() {
   const { email, phone, address } = siteContent.contact;
 
   return (
-    <footer className="bg-brand-maroon text-brand-cream py-16 px-8 mt-auto">
+    <footer className="bg-brand-maroon text-brand-cream py-12 px-8 mt-auto">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
         <div>
-          <img src="/logo.jpg" alt={brandName} className="h-40 md:h-52 w-auto object-contain mb-6" />
-          <p className="text-sm text-brand-cream/80 max-w-sm leading-relaxed">
+          <img src="/logo.jpg" alt={brandName} className="h-20 md:h-28 w-auto object-contain mb-6" />
+          <p className="text-base text-brand-cream/80 max-w-sm leading-relaxed">
             {siteContent.about.content}
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-serif text-xl text-brand-gold mb-6">Quick Links</h4>
+          <h4 className="font-serif text-2xl text-brand-gold mb-6">Quick Links</h4>
           <ul className="space-y-3">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className="text-sm tracking-wider uppercase text-brand-cream/80 hover:text-brand-gold transition-colors">
+                <Link href={link.href} className="text-base tracking-wider uppercase text-brand-cream/80 hover:text-brand-gold transition-colors">
                   {link.name}
                 </Link>
               </li>
@@ -32,8 +32,8 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="font-serif text-xl text-brand-gold mb-6">Contact Us</h4>
-          <ul className="space-y-3 text-sm text-brand-cream/80 mb-6">
+          <h4 className="font-serif text-2xl text-brand-gold mb-6">Contact Us</h4>
+          <ul className="space-y-3 text-base text-brand-cream/80 mb-6">
             <li className="whitespace-pre-line">{address}</li>
             <li>{email}</li>
             <li>{phone}</li>

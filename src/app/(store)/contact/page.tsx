@@ -47,7 +47,7 @@ export default function ContactPage() {
       <PageHeader 
         title="Get in Touch" 
         tagline="WE WOULD LOVE TO HEAR FROM YOU" 
-        bgImage="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80"
       />
 
       <div className="max-w-6xl mx-auto px-8 py-24 w-full">
