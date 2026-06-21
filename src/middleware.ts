@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { verifyToken } from './lib/auth';
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   
   // Define protected paths
@@ -15,29 +16,26 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check for authorization header
-  const basicAuth = req.headers.get('authorization');
+  // Check for admin_session cookie
+  const sessionToken = req.cookies.get('admin_session')?.value;
+  const isAuthenticated = await verifyToken(sessionToken);
 
-  if (basicAuth) {
-    const authValue = basicAuth.split(' ')[1];
-    const [user, pwd] = atob(authValue).split(':');
-
-    const expectedUser = process.env.ADMIN_EMAIL;
-    const expectedPwd = process.env.ADMIN_PASSWORD;
-
-    // Validate credentials
-    if (user === expectedUser && pwd === expectedPwd) {
-      return NextResponse.next();
-    }
+  if (isAuthenticated) {
+    return NextResponse.next();
   }
 
-  // If no auth or invalid auth, prompt for credentials
-  return new NextResponse('Auth required', {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Secure Area"',
-    },
-  });
+  // If not authenticated:
+  // For API mutations, return 401 JSON
+  if (isApiMutation) {
+    return NextResponse.json(
+      { error: 'Unauthorized: Admin session required' },
+      { status: 401 }
+    );
+  }
+
+  // For Admin pages, redirect to login
+  const loginUrl = new URL('/login', req.url);
+  return NextResponse.redirect(loginUrl);
 }
 
 // See "Matching Paths" below to learn more
