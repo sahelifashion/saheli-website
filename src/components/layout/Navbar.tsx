@@ -20,12 +20,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-brand-maroon border-b border-white/10 py-3 xl:py-4 px-8 xl:px-12 sticky top-0 z-50">
+    <nav className="w-full bg-brand-maroon border-b border-white/10 py-1.5 xl:py-2.5 px-8 xl:px-12 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center justify-center space-y-0.5" onClick={closeMobileMenu}>
-          <img src="/logo.jpg" alt={brandName} className="h-16 md:h-22 xl:h-26 2xl:h-28 w-auto object-contain transition-all duration-300" />
+          <img src="/logo.jpg" alt={brandName} className="h-32 md:h-40 xl:h-44 2xl:h-48 w-auto object-contain transition-all duration-300" />
         </Link>
  
         {/* Desktop Navigation Links */}

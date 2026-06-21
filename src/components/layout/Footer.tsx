@@ -6,18 +6,22 @@ export default function Footer() {
   const { email, phone, address } = siteContent.contact;
 
   return (
-    <footer className="bg-brand-maroon text-brand-cream py-12 xl:py-16 px-8 xl:px-12 mt-auto">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="bg-brand-maroon text-brand-cream py-10 xl:py-14 px-8 xl:px-12 mt-auto">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
         {/* Brand */}
-        <div>
-          <img src="/logo.jpg" alt={brandName} className="h-20 md:h-28 xl:h-34 2xl:h-38 w-auto object-contain mb-6 transition-all duration-300" />
-          <p className="text-base xl:text-lg 2xl:text-xl text-brand-cream/80 max-w-sm leading-relaxed">
+        <div className="-mt-4 md:-mt-7 xl:-mt-9 2xl:-mt-10 w-full md:w-auto md:max-w-[320px] lg:max-w-sm">
+          <img 
+            src="/logo.jpg" 
+            alt={brandName} 
+            className="h-32 md:h-44 xl:h-52 2xl:h-56 w-auto object-contain mb-3 -mb-3 md:-mb-6 xl:-mb-7 2xl:-mb-8 transition-all duration-300" 
+          />
+          <p className="text-base xl:text-lg 2xl:text-xl text-brand-cream/80 leading-relaxed">
             {siteContent.about.content}
           </p>
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div className="w-full md:w-auto">
           <h4 className="font-serif text-2xl xl:text-3xl 2xl:text-4xl text-brand-gold mb-6">Quick Links</h4>
           <ul className="space-y-3">
             {navLinks.map((link) => (
@@ -31,7 +35,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="w-full md:w-auto md:max-w-xs">
           <h4 className="font-serif text-2xl xl:text-3xl 2xl:text-4xl text-brand-gold mb-6">Contact Us</h4>
           <ul className="space-y-3 text-base xl:text-lg 2xl:text-xl text-brand-cream/80 mb-6">
             <li className="whitespace-pre-line">{address}</li>
