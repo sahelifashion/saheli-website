@@ -65,17 +65,17 @@ export default function AboutPage() {
         </section>
 
         {/* Founder Section */}
-        <FadeIn direction="up" className="bg-white p-12 rounded-[2rem] border border-[#EAE3DB] shadow-md flex flex-col md:flex-row items-center text-left gap-12 relative overflow-hidden">
+        <FadeIn direction="up" className="bg-white p-8 md:p-12 rounded-[2rem] border border-[#EAE3DB] shadow-md flex flex-col md:flex-row items-center text-left gap-8 md:gap-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-32 h-32 bg-brand-cream rounded-br-full -z-10"></div>
           
-          <div className="w-full md:w-1/3 flex justify-center">
+          <div className="w-full md:w-2/5 flex justify-center items-center">
              <img 
                src="/founder.jpg" 
                alt={founder.name}
-               className="w-32 h-64 md:w-full object-cover rounded-2xl border-4 border-brand-cream shadow-xl"
+               className="w-full max-w-sm md:max-w-full h-auto object-contain rounded-2xl border-4 border-brand-cream shadow-xl"
              />
           </div>
-          <div className="w-full md:w-2/3">
+          <div className="w-full md:w-3/5">
             <p className="text-brand-gold tracking-widest text-sm font-semibold uppercase mb-2">{founder.sectionTag}</p>
             <h3 className="font-serif text-4xl text-brand-maroon mb-6">{founder.name}</h3>
             <p className="text-gray-600 text-lg leading-relaxed italic mb-8">

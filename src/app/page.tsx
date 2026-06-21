@@ -4,6 +4,7 @@ import { siteContent } from "@/data/content";
 import FadeIn from "@/components/animations/FadeIn";
 import { PrismaClient } from "@prisma/client";
 import CategoryTabSwitcher from "@/components/CategoryTabSwitcher";
+import HeroSlider from "@/components/layout/HeroSlider";
 
 const prisma = new PrismaClient();
 
@@ -79,17 +80,13 @@ export default async function Home() {
     <div className="flex flex-col w-full">
       {/* 1. Full-Width Hero Section */}
       <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg)` }}
-        >
-          {/* Overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-brand-dark/40"></div>
-        </div>
+        {/* Animated Background Slider */}
+        <HeroSlider images={hero.images || [
+          "https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg"
+        ]} />
 
         {/* Text Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl flex flex-col items-center">
+        <div className="relative z-20 text-center px-4 max-w-4xl flex flex-col items-center">
           <FadeIn direction="up" delay={0.2}>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-cream font-bold leading-tight mb-8 drop-shadow-lg">
               {hero.heading.split('\n').map((line, i) => (

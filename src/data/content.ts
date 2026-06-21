@@ -12,8 +12,9 @@ export const siteContent = {
     ],
     socialLinks: {
       instagram: "https://instagram.com/sahelifashionjewellery",
-      whatsapp: "https://wa.me/919207060111",
       facebook: "https://www.facebook.com/sahelifashionjewellery",
+      youtube: "https://www.youtube.com/@sahelifashionjewellery",
+      whatsapp: "https://wa.me/919207060111",
     }
   },
   home: {
@@ -22,6 +23,12 @@ export const siteContent = {
       subtext: "Discover fashion jewellery that adds charm to every moment of yours.",
       ctaText: "SHOP NOW",
       ctaLink: "/collections",
+      images: [
+        "https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg",
+        "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&q=80&w=1920",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=1920",
+        "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&q=80&w=1920"
+      ]
     },
     collections: {
       sectionTag: "EXPLORE OUR COLLECTIONS",
