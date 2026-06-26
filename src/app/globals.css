@@ -3,6 +3,25 @@
 :root {
   --background: #FBF8F4;
   --foreground: #8E214C;
+  --navbar-height: 93px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --navbar-height: 109px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --navbar-height: 133px;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --navbar-height: 149px;
+  }
 }
 
 @theme inline {

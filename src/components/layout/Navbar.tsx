@@ -25,7 +25,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center justify-center space-y-0.5" onClick={closeMobileMenu}>
-          <img src="/logo.jpg" alt={brandName} className="h-32 md:h-40 xl:h-44 2xl:h-48 w-auto object-contain transition-all duration-300" />
+          <img src="/logo.jpg" alt={brandName} className="h-20 md:h-24 xl:h-28 2xl:h-32 w-auto object-contain transition-all duration-300" />
         </Link>
  
         {/* Desktop Navigation Links */}
@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`text-base xl:text-lg 2xl:text-xl tracking-wider uppercase font-medium transition-colors relative pb-2
+                className={`text-sm xl:text-base 2xl:text-lg tracking-wider uppercase font-medium transition-colors relative pb-2
                   ${isActive ? 'text-brand-gold' : 'text-brand-cream/80 hover:text-brand-cream'}
                 `}
               >
@@ -68,7 +68,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href}
                 onClick={closeMobileMenu}
-                className={`text-base tracking-wider uppercase font-medium transition-colors block py-2
+                className={`text-sm tracking-wider uppercase font-medium transition-colors block py-2
                   ${isActive ? 'text-brand-gold font-bold' : 'text-brand-cream/80 hover:text-brand-cream'}
                 `}
               >

@@ -9,24 +9,24 @@ export default function Footer() {
     <footer className="bg-brand-maroon text-brand-cream py-10 xl:py-14 px-8 xl:px-12 mt-auto">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
         {/* Brand */}
-        <div className="-mt-4 md:-mt-7 xl:-mt-9 2xl:-mt-10 w-full md:w-auto md:max-w-[320px] lg:max-w-sm">
+        <div className="-mt-3 md:-mt-5 xl:-mt-6 2xl:-mt-7 w-full md:w-auto md:max-w-[320px] lg:max-w-sm">
           <img 
             src="/logo.jpg" 
             alt={brandName} 
-            className="h-32 md:h-44 xl:h-52 2xl:h-56 w-auto object-contain mb-3 -mb-3 md:-mb-6 xl:-mb-7 2xl:-mb-8 transition-all duration-300" 
+            className="mx-auto block h-24 md:h-32 xl:h-36 2xl:h-40 w-auto object-contain mb-2 -mb-2 md:-mb-4 xl:-mb-5 2xl:-mb-6 transition-all duration-300" 
           />
-          <p className="text-base xl:text-lg 2xl:text-xl text-brand-cream/80 leading-relaxed">
+          <p className="text-sm xl:text-base 2xl:text-lg text-brand-cream/80 leading-relaxed text-left">
             {siteContent.about.content}
           </p>
         </div>
 
         {/* Quick Links */}
         <div className="w-full md:w-auto">
-          <h4 className="font-serif text-2xl xl:text-3xl 2xl:text-4xl text-brand-gold mb-6">Quick Links</h4>
+          <h4 className="font-serif text-xl xl:text-2xl 2xl:text-3xl text-brand-gold mb-6">Quick Links</h4>
           <ul className="space-y-3">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className="text-base xl:text-lg 2xl:text-xl tracking-wider uppercase text-brand-cream/80 hover:text-brand-gold transition-colors">
+                <Link href={link.href} className="text-sm xl:text-base 2xl:text-lg tracking-wider uppercase text-brand-cream/80 hover:text-brand-gold transition-colors">
                   {link.name}
                 </Link>
               </li>
@@ -36,8 +36,8 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="w-full md:w-auto md:max-w-xs">
-          <h4 className="font-serif text-2xl xl:text-3xl 2xl:text-4xl text-brand-gold mb-6">Contact Us</h4>
-          <ul className="space-y-3 text-base xl:text-lg 2xl:text-xl text-brand-cream/80 mb-6">
+          <h4 className="font-serif text-xl xl:text-2xl 2xl:text-3xl text-brand-gold mb-6">Contact Us</h4>
+          <ul className="space-y-3 text-sm xl:text-base 2xl:text-lg text-brand-cream/80 mb-6">
             <li className="whitespace-pre-line">{address}</li>
             <li>{email}</li>
             <li>{phone}</li>

@@ -64,65 +64,65 @@ export default function ContactPage() {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Side: Cards */}
           <div className="w-full lg:w-1/3 flex flex-col gap-6">
-            <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+            <div className="bg-[#F0EAE1] p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-white transition-colors flex-shrink-0">
                 <MapPin size={20} />
               </div>
               <div>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">Visit Us</h3>
-                <p className="text-sm text-brand-gold hover:text-brand-maroon transition-colors whitespace-pre-line">{contact.address}</p>
+                <p className="text-sm text-[#856A2B] hover:text-brand-maroon transition-colors whitespace-pre-line">{contact.address}</p>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+            <div className="bg-[#F0EAE1] p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-white transition-colors flex-shrink-0">
                 <Mail size={20} />
               </div>
               <div>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">Email Us</h3>
-                <a href={`mailto:${contact.email}`} className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">{contact.email}</a>
+                <a href={`mailto:${contact.email}`} className="text-sm text-[#856A2B] hover:text-brand-maroon transition-colors">{contact.email}</a>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+            <div className="bg-[#F0EAE1] p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-white transition-colors flex-shrink-0">
                 <Phone size={20} />
               </div>
               <div>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">Call Us</h3>
-                <a href={`tel:${contact.phone}`} className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">{contact.phone}</a>
+                <a href={`tel:${contact.phone}`} className="text-sm text-[#856A2B] hover:text-brand-maroon transition-colors">{contact.phone}</a>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+            <div className="bg-[#F0EAE1] p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-white transition-colors flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </div>
               <div>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">Instagram</h3>
-                <a href={siteContent.global.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">@sahelifashionjewellery</a>
+                <a href={siteContent.global.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-[#856A2B] hover:text-brand-maroon transition-colors">@sahelifashionjewellery</a>
               </div>
             </div>
 
             {siteContent.global.socialLinks.facebook && (
-              <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+              <div className="bg-[#F0EAE1] p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-white transition-colors flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 </div>
                 <div>
                   <h3 className="font-serif text-lg text-brand-maroon mb-1">Facebook</h3>
-                  <a href={siteContent.global.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">@sahelifashionjewellery</a>
+                  <a href={siteContent.global.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-sm text-[#856A2B] hover:text-brand-maroon transition-colors">@sahelifashionjewellery</a>
                 </div>
               </div>
             )}
 
-            <div className="bg-white p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-brand-cream transition-colors flex-shrink-0">
+            <div className="bg-[#F0EAE1] p-6 rounded-xl border border-[#EAE3DB] flex items-center group hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-6 text-brand-maroon group-hover:bg-brand-maroon group-hover:text-white transition-colors flex-shrink-0">
                 <MessageCircle size={20} />
               </div>
               <div>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">WhatsApp</h3>
-                <a href={siteContent.global.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm text-brand-gold hover:text-brand-maroon transition-colors">Chat with us</a>
+                <a href={siteContent.global.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm text-[#856A2B] hover:text-brand-maroon transition-colors">Chat with us</a>
               </div>
             </div>
           </div>

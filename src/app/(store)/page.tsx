@@ -79,7 +79,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Full-Width Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[calc(100vh-var(--navbar-height))] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Animated Background Slider */}
         <HeroSlider images={hero.images || [
           "https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg"
