@@ -24,10 +24,20 @@ export const siteContent = {
       ctaText: "SHOP NOW",
       ctaLink: "/collections",
       images: [
-        "https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg",
-        "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&q=80&w=3840",
-        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=3840",
-        "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&q=80&w=3840"
+        "/hero-images/01.jpg",
+        "/hero-images/02.png",
+        "/hero-images/03.jpg",
+        "/hero-images/04.jpg",
+        "/hero-images/05.jpg",
+        "/hero-images/06.jpg",
+        "/hero-images/07.jpg",
+        "/hero-images/08.jpg",
+        "/hero-images/09.jpg",
+        "/hero-images/10.jpg",
+        "/hero-images/11.jpg",
+        "/hero-images/12.jpg",
+        "/hero-images/13.jpg",
+        "/hero-images/14.jpg"
       ]
     },
     collections: {
