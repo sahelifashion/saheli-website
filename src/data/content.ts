@@ -150,7 +150,7 @@ export const siteContent = {
   contact: {
     heading: "Get in Touch",
     email: "saheli.fj@gmail.com",
-    phone: "919207060111",
-    address: "Nisha MV,\nChiraykkal Manavalan,\nNear Railway station,\n680307 Pincode,\n9207060111"
+    phone: "+919207060111",
+    address: "Nisha MV,\nChiraykkal Manavalan,\nNear Railway station,\n680307 Pincode,\n+919207060111"
   }
 };
