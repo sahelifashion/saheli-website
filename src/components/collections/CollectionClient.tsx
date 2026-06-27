@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
 import { siteContent } from "@/data/content";
@@ -157,10 +158,12 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
           {displayedProducts.map((product, index) => (
             <FadeIn key={product.id} direction="up" delay={index * 0.05} className="group cursor-pointer" onClick={() => openPopup(product)}>
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 border border-[#EAE3DB]">
-                <img 
+                <Image 
                   src={product.imageUrl} 
                   alt={product.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-brand-maroon/0 group-hover:bg-brand-maroon/10 transition-colors duration-300"></div>
                 <div className="absolute bottom-4 left-0 w-full flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
@@ -203,10 +206,13 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
             >
               {/* Image Carousel */}
               <div className="w-full md:w-1/2 relative bg-white aspect-square md:aspect-auto h-[400px] md:h-[600px] border-r border-[#EAE3DB]">
-                <img 
+                <Image 
                   src={allImages[currentImageIndex]} 
                   alt={selectedProduct.name} 
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
                 />
                 
                 {allImages.length > 1 && (

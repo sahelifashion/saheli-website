@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles, ShieldCheck, Truck, HeartHandshake, Star } from "lucide-react";
 import { siteContent } from "@/data/content";
 import FadeIn from "@/components/animations/FadeIn";
@@ -125,11 +126,13 @@ export default async function Home() {
       <section className="w-full py-24 px-8 bg-[#F0EAE1] relative overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <FadeIn direction="right" className="w-full md:w-1/2">
-            <div className="relative rounded-t-full rounded-b-2xl overflow-hidden border-8 border-brand-cream shadow-xl">
-              <img 
+            <div className="relative rounded-t-full rounded-b-2xl overflow-hidden border-8 border-brand-cream shadow-xl aspect-[4/5] w-full">
+              <Image 
                 src={aboutSaheli.image} 
                 alt="About Saheli" 
-                className="w-full aspect-[4/5] object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </FadeIn>
@@ -214,10 +217,12 @@ export default async function Home() {
                 <FadeIn key={product.id} direction="up" delay={idx * 0.1} className="group">
                   <Link href="/collections">
                     <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 border border-[#EAE3DB]">
-                      <img 
+                      <Image 
                         src={product.imageUrl} 
                         alt={product.name} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-brand-maroon/0 group-hover:bg-brand-maroon/10 transition-colors duration-300"></div>
                       <div className="absolute bottom-4 left-0 w-full flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">

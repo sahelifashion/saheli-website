@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Image from "next/image";
+
 interface HeroSliderProps {
   images: string[];
   children?: React.ReactNode;
@@ -40,9 +42,18 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: "easeInOut" }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${shuffledImages[currentIndex] || images[0]})` }}
-        />
+          className="absolute inset-0"
+        >
+          <Image
+            src={shuffledImages[currentIndex] || images[0]}
+            alt="Hero background"
+            fill
+            sizes="100vw"
+            priority={currentIndex === 0}
+            className="object-cover"
+            quality={75}
+          />
+        </motion.div>
       </AnimatePresence>
       
       {/* Overlay to ensure text readability */}
