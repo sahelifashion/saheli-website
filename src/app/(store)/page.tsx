@@ -82,11 +82,8 @@ export default async function Home() {
       <section className="relative w-full h-[calc(100vh-var(--navbar-height))] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Animated Background Slider */}
         <HeroSlider images={hero.images || [
-          "https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwc60b50cb/Trending%20Designs%20in%20Gold%20for%20Your%20Wedding%20Jewellery%20Ranging%20from%20Mangtika%20to%20Payal_D.jpg"
-        ]} />
-
-        {/* Text Content */}
-        <div className="relative z-20 text-center px-4 max-w-4xl flex flex-col items-center">
+          "/hero-images/01.jpg"
+        ]}>
           <FadeIn direction="up" delay={0.2}>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-cream font-bold leading-tight mb-8 drop-shadow-lg">
               {hero.heading.split('\n').map((line, i) => (
@@ -105,7 +102,7 @@ export default async function Home() {
               <ArrowRight className="ml-4 w-4 h-4" />
             </Link>
           </FadeIn>
-        </div>
+        </HeroSlider>
       </section>
 
       {/* 2. Collections Section */}

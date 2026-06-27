@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface HeroSliderProps {
   images: string[];
+  children?: React.ReactNode;
 }
 
-export default function HeroSlider({ images }: HeroSliderProps) {
+export default function HeroSlider({ images, children }: HeroSliderProps) {
   const [shuffledImages, setShuffledImages] = useState<string[]>(images);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,7 +32,7 @@ export default function HeroSlider({ images }: HeroSliderProps) {
   }, [shuffledImages.length]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
+    <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
       <AnimatePresence>
         <motion.div
           key={shuffledImages[currentIndex] || currentIndex}
@@ -46,6 +47,21 @@ export default function HeroSlider({ images }: HeroSliderProps) {
       
       {/* Overlay to ensure text readability */}
       <div className="absolute inset-0 bg-brand-dark/40 z-10"></div>
+
+      {/* Children Text Content - Animated Presence based on currentIndex */}
+      <AnimatePresence>
+        {currentIndex === 0 && children && (
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative z-20 text-center px-4 max-w-4xl flex flex-col items-center"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Navigation Dot Indicators */}
       {shuffledImages.length > 1 && (
