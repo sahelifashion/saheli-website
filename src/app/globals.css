@@ -58,15 +58,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 2200px) {
   .header-logo {
     height: 10rem !important; /* 160px */
-    transform: translateX(-12px) !important;
-  }
-  
-  .footer-logo-container {
-    height: 9rem !important; /* 144px */
+    transform: none !important;
   }
   
   .footer-logo {
-    height: 12rem !important; /* 192px */
-    transform: translate(-50%, -50%) translateX(-18px) !important;
+    height: 18rem !important; /* 288px */
+    margin-top: -2rem !important;
+    margin-bottom: -4.5rem !important;
   }
 }

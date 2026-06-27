@@ -9,16 +9,13 @@ export default function Footer() {
     <footer className="bg-brand-maroon text-brand-cream py-10 xl:py-14 px-8 xl:px-12 mt-auto">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
         {/* Brand */}
-        <div className="w-full md:w-auto md:max-w-[320px] lg:max-w-sm flex flex-col items-center text-center">
-          {/* Logo container wrapper with overflow-hidden to crop vertical padding */}
-          <div className="relative w-full h-16 md:h-22 xl:h-26 2xl:h-30 overflow-hidden mb-4 footer-logo-container">
-            <img 
-              src="/logo.jpg" 
-              alt={brandName} 
-              className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-[calc(50%+12px)] h-28 md:h-36 xl:h-40 2xl:h-44 w-auto object-contain footer-logo max-w-none" 
-            />
-          </div>
-          <p className="text-sm xl:text-base 2xl:text-lg text-brand-cream/80 leading-relaxed text-center">
+        <div className="w-full md:w-auto md:max-w-[300px] lg:max-w-sm flex flex-col items-center text-center">
+          <img 
+            src="/logo.jpg" 
+            alt={brandName} 
+            className="mx-auto block h-[128px] md:h-[168px] xl:h-[192px] 2xl:h-[224px] w-auto object-contain -mt-[12px] md:-mt-[16px] xl:-mt-[20px] 2xl:-mt-[24px] -mb-6 md:-mb-9 xl:-mb-11 2xl:-mb-14 transition-all duration-300 footer-logo" 
+          />
+          <p className="text-sm xl:text-base 2xl:text-lg text-brand-cream/80 leading-relaxed text-center relative z-10 mt-8">
             {siteContent.about.content}
           </p>
         </div>
