@@ -9,19 +9,22 @@ export default function Footer() {
     <footer className="bg-brand-maroon text-brand-cream py-10 xl:py-14 px-8 xl:px-12 mt-auto">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
         {/* Brand */}
-        <div className="-mt-3 md:-mt-5 xl:-mt-6 2xl:-mt-7 w-full md:w-auto md:max-w-[320px] lg:max-w-sm">
-          <img 
-            src="/logo.jpg" 
-            alt={brandName} 
-            className="mx-auto block h-24 md:h-32 xl:h-36 2xl:h-40 w-auto object-contain mb-2 -mb-2 md:-mb-4 xl:-mb-5 2xl:-mb-6 transition-all duration-300" 
-          />
-          <p className="text-sm xl:text-base 2xl:text-lg text-brand-cream/80 leading-relaxed text-left">
+        <div className="w-full md:w-auto md:max-w-[320px] lg:max-w-sm flex flex-col items-center text-center">
+          {/* Logo container wrapper with overflow-hidden to crop vertical padding */}
+          <div className="relative w-full h-16 md:h-22 xl:h-26 2xl:h-30 overflow-hidden mb-4 footer-logo-container">
+            <img 
+              src="/logo.jpg" 
+              alt={brandName} 
+              className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-[calc(50%+12px)] h-28 md:h-36 xl:h-40 2xl:h-44 w-auto object-contain footer-logo max-w-none" 
+            />
+          </div>
+          <p className="text-sm xl:text-base 2xl:text-lg text-brand-cream/80 leading-relaxed text-center">
             {siteContent.about.content}
           </p>
         </div>
 
         {/* Quick Links */}
-        <div className="w-full md:w-auto">
+        <div className="w-full md:w-auto flex flex-col items-center text-center">
           <h4 className="font-serif text-xl xl:text-2xl 2xl:text-3xl text-brand-gold mb-6">Quick Links</h4>
           <ul className="space-y-3">
             {navLinks.map((link) => (
@@ -35,14 +38,14 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="w-full md:w-auto md:max-w-xs">
+        <div className="w-full md:w-auto md:max-w-xs flex flex-col items-center text-center">
           <h4 className="font-serif text-xl xl:text-2xl 2xl:text-3xl text-brand-gold mb-6">Contact Us</h4>
-          <ul className="space-y-3 text-sm xl:text-base 2xl:text-lg text-brand-cream/80 mb-6">
-            <li className="whitespace-pre-line">{address}</li>
-            <li>{email}</li>
-            <li>{phone}</li>
+          <ul className="space-y-3 text-sm xl:text-base 2xl:text-lg text-brand-cream/80 mb-6 flex flex-col items-center">
+            <li className="whitespace-pre-line text-center">{address}</li>
+            <li className="text-center">{email}</li>
+            <li className="text-center">{phone}</li>
           </ul>
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center">
             {/* Instagram */}
             {siteContent.global.socialLinks.instagram && (
               <a href={siteContent.global.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-cream/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors" aria-label="Instagram">

@@ -25,7 +25,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center justify-center space-y-0.5" onClick={closeMobileMenu}>
-          <img src="/logo.jpg" alt={brandName} className="h-20 md:h-24 xl:h-28 2xl:h-32 w-auto object-contain transition-all duration-300" />
+          <img src="/logo.jpg" alt={brandName} className="h-20 md:h-24 xl:h-28 2xl:h-32 w-auto object-contain transition-all duration-300 -translate-x-[8px] header-logo" />
         </Link>
  
         {/* Desktop Navigation Links */}
