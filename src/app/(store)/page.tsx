@@ -82,7 +82,7 @@ export default async function Home() {
       <section className="relative w-full h-[calc(100vh-var(--navbar-height))] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Animated Background Slider */}
         <HeroSlider images={hero.images || [
-          "/hero-images/01.jpg"
+          "/hero-images/01.webp"
         ]}>
           <FadeIn direction="up" delay={0.2}>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-cream font-bold leading-tight mb-8 drop-shadow-lg">
