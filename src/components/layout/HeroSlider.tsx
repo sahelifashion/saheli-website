@@ -16,10 +16,10 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
 
   useEffect(() => {
     if (images.length === 0) return;
-    // Shuffle the images array using Fisher-Yates algorithm
+    // Shuffle the images array starting from index 1 (keeping images[0] stable for preloading)
     const shuffled = [...images];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+    for (let i = shuffled.length - 1; i > 1; i--) {
+      const j = Math.floor(Math.random() * i) + 1;
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     setShuffledImages(shuffled);
