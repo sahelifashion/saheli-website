@@ -170,7 +170,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
                 </div>
               </div>
               <div className="text-center">
-                <span className="text-brand-gold text-[10px] uppercase tracking-[0.2em] block mb-1">
+                <span className="text-[#856A2B] text-[10px] uppercase tracking-[0.2em] block mb-1">
                   {product.category}{product.subCategory ? ` • ${product.subCategory}` : ''}
                 </span>
                 <h3 className="font-serif text-lg text-brand-maroon mb-1">
@@ -198,7 +198,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-brand-cream w-full max-w-4xl rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
+              className="bg-[#F0EAE1] w-full max-w-4xl rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
               onClick={e => e.stopPropagation()}
             >
               {/* Image Carousel */}
@@ -247,7 +247,7 @@ export default function CollectionClient({ initialProducts }: { initialProducts:
                 </button>
 
                 <div className="mt-8 md:mt-0 flex-grow">
-                  <span className="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">
+                  <span className="text-[#856A2B] text-xs uppercase tracking-[0.2em] font-semibold block mb-3">
                     {selectedProduct.category}{selectedProduct.subCategory ? ` • ${selectedProduct.subCategory}` : ''}
                   </span>
                   <h2 className="font-serif text-3xl md:text-4xl text-brand-maroon mb-4">

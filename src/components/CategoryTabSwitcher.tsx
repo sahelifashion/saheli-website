@@ -68,7 +68,7 @@ export default function CategoryTabSwitcher({ productsByCategory, categories }: 
                     </div>
                   </div>
                   <div className="text-center">
-                    <span className="text-brand-gold text-[10px] uppercase tracking-[0.2em] block mb-1">
+                    <span className="text-[#856A2B] text-[10px] uppercase tracking-[0.2em] block mb-1">
                       {product.category}{product.subCategory ? ` • ${product.subCategory}` : ''}
                     </span>
                     <h3 className="font-serif text-lg text-brand-maroon mb-1 group-hover:text-brand-gold transition-colors truncate px-2">

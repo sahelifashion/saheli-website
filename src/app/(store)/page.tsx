@@ -108,7 +108,7 @@ export default async function Home() {
       {/* 2. Collections Section */}
       <section className="w-full py-24 px-8 bg-brand-cream flex flex-col items-center">
         <FadeIn direction="up" className="text-center mb-16">
-          <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
+          <span className="text-[#856A2B] tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
             {collections.sectionTag}
           </span>
           <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon">
@@ -122,7 +122,7 @@ export default async function Home() {
       </section>
 
       {/* 3. About Saheli Section */}
-      <section className="w-full py-24 px-8 bg-white relative overflow-hidden">
+      <section className="w-full py-24 px-8 bg-[#F0EAE1] relative overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <FadeIn direction="right" className="w-full md:w-1/2">
             <div className="relative rounded-t-full rounded-b-2xl overflow-hidden border-8 border-brand-cream shadow-xl">
@@ -135,7 +135,7 @@ export default async function Home() {
           </FadeIn>
           
           <FadeIn direction="left" delay={0.2} className="w-full md:w-1/2">
-            <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
+            <span className="text-[#856A2B] tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
               {aboutSaheli.sectionTag}
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon mb-6 leading-tight">
@@ -157,10 +157,10 @@ export default async function Home() {
       </section>
 
       {/* 4. Why Choose Us Section */}
-      <section className="w-full py-24 px-8 bg-[#FDFBF9] border-y border-[#EAE3DB]">
+      <section className="w-full py-24 px-8 bg-brand-cream border-y border-[#EAE3DB]">
         <div className="max-w-6xl mx-auto text-center">
           <FadeIn direction="up">
-            <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
+            <span className="text-[#856A2B] tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
               {whyChooseUs.sectionTag}
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon mb-16">
@@ -185,11 +185,11 @@ export default async function Home() {
       </section>
 
       {/* 5. Featured Products Section */}
-      <section className="w-full py-24 px-8 bg-white">
+      <section className="w-full py-24 px-8 bg-[#F0EAE1]">
         <div className="max-w-6xl mx-auto">
           <FadeIn direction="up" className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
+              <span className="text-[#856A2B] tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
                 NEW ARRIVALS
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon">
@@ -227,7 +227,7 @@ export default async function Home() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <span className="text-brand-gold text-[10px] uppercase tracking-[0.2em] block mb-1">
+                      <span className="text-[#856A2B] text-[10px] uppercase tracking-[0.2em] block mb-1">
                         {product.category}{product.subCategory ? ` • ${product.subCategory}` : ''}
                       </span>
                       <h3 className="font-serif text-lg text-brand-maroon mb-1 group-hover:text-brand-gold transition-colors">
@@ -246,7 +246,7 @@ export default async function Home() {
       {/* 6. Testimonials Section (Auto Horizontal Scroll) */}
       <section className="w-full py-24 bg-brand-cream overflow-hidden flex flex-col">
         <FadeIn direction="up" className="text-center px-8 mb-16">
-          <span className="text-brand-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
+          <span className="text-[#856A2B] tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
             {testimonials.sectionTag}
           </span>
           <h2 className="font-serif text-4xl md:text-5xl text-brand-maroon">
@@ -260,9 +260,9 @@ export default async function Home() {
             {[...testimonials.reviews, ...testimonials.reviews].map((review, idx) => (
               <div 
                 key={idx} 
-                className="inline-flex flex-col w-[350px] md:w-[400px] whitespace-normal bg-white p-8 rounded-2xl border border-[#EAE3DB] shadow-sm flex-shrink-0"
+                className="inline-flex flex-col w-[350px] md:w-[400px] whitespace-normal bg-[#F0EAE1] p-8 rounded-2xl border border-[#EAE3DB] shadow-sm flex-shrink-0"
               >
-                <div className="flex text-brand-gold mb-4">
+                <div className="flex text-[#856A2B] mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
                 <p className="text-gray-600 italic leading-relaxed mb-6 flex-grow">"{review.text}"</p>
