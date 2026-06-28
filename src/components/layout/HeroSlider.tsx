@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 interface HeroSliderProps {
   images: string[];
@@ -76,7 +77,7 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
 
       {/* Navigation Dot Indicators */}
       {shuffledImages.length > 1 && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3 items-center">
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex space-x-3 items-center">
           {shuffledImages.map((_, idx) => {
             const isActive = idx === currentIndex;
             return (
@@ -105,6 +106,22 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
           })}
         </div>
       )}
+
+      {/* Scroll Down Indicator */}
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 cursor-pointer pointer-events-none select-none"
+      >
+        <span className="text-brand-cream/50 text-[9px] tracking-[0.3em] uppercase font-semibold">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 4, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown size={14} className="text-brand-cream/60" />
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

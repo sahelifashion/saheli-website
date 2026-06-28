@@ -80,7 +80,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Full-Width Hero Section */}
-      <section className="relative w-full h-[calc(100vh-var(--navbar-height))] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[calc(85vh-var(--navbar-height))] min-h-[450px] flex items-center justify-center overflow-hidden">
         {/* Animated Background Slider */}
         <HeroSlider images={hero.images || [
           "/hero-images/01.webp"
