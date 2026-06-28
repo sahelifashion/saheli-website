@@ -34,11 +34,14 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
     return () => clearInterval(interval);
   }, [shuffledImages.length]);
 
+  const currentSrc = shuffledImages[currentIndex] || images[0];
+  const isHero1 = currentSrc.includes("01.webp");
+
   return (
     <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
       <AnimatePresence>
         <motion.div
-          key={shuffledImages[currentIndex] || currentIndex}
+          key={currentSrc}
           initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
@@ -46,12 +49,12 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
           className="absolute inset-0"
         >
           <Image
-            src={shuffledImages[currentIndex] || images[0]}
+            src={currentSrc}
             alt="Hero background"
             fill
             sizes="100vw"
             priority={currentIndex === 0}
-            className="object-cover"
+            className={`object-cover ${isHero1 ? 'object-right' : 'object-center'}`}
             quality={75}
           />
         </motion.div>
