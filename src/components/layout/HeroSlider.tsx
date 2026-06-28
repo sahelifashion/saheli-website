@@ -80,7 +80,7 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
 
       {/* Navigation Dot Indicators */}
       {shuffledImages.length > 1 && (
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex space-x-3 items-center">
+        <div className="absolute bottom-18 left-1/2 -translate-x-1/2 z-20 flex space-x-3 items-center">
           {shuffledImages.map((_, idx) => {
             const isActive = idx === currentIndex;
             return (
@@ -117,12 +117,12 @@ export default function HeroSlider({ images, children }: HeroSliderProps) {
         transition={{ delay: 1, duration: 0.8 }}
         className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 cursor-pointer pointer-events-none select-none"
       >
-        <span className="text-brand-cream/50 text-[9px] tracking-[0.3em] uppercase font-semibold">Scroll</span>
+        <span className="text-brand-cream/70 text-[11px] tracking-[0.3em] uppercase font-semibold">Scroll</span>
         <motion.div
           animate={{ y: [0, 4, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={14} className="text-brand-cream/60" />
+          <ChevronDown size={18} className="text-brand-cream/70" />
         </motion.div>
       </motion.div>
     </div>
