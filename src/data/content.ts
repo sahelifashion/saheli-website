@@ -24,7 +24,6 @@ export const siteContent = {
       ctaText: "SHOP NOW",
       ctaLink: "/collections",
       images: [
-        // "/hero-images/01.webp",
         "/hero-images/02.webp",
         "/hero-images/03.webp",
         "/hero-images/04.webp",
