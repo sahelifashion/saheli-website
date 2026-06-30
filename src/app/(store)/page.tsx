@@ -80,19 +80,22 @@ export default async function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Full-Width Hero Section */}
-      <section className="relative w-full h-[calc(100vh-var(--navbar-height))] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section 
+        className="relative w-full min-h-[350px] flex items-center justify-center overflow-hidden"
+        style={{ height: "calc((100vh - var(--navbar-height)) * 0.7)" }}
+      >
         {/* Animated Background Slider */}
         <HeroSlider images={hero.images || [
-          "/hero-images/01.webp"
+          "/hero-images/02.webp"
         ]}>
           <FadeIn direction="up" delay={0.2}>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-cream font-bold leading-tight mb-8 drop-shadow-lg">
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-cream font-bold leading-tight mb-4 md:mb-6 drop-shadow-lg">
               {hero.heading.split('\n').map((line, i) => (
                 <span key={i} className="block">{line}</span>
               ))}
             </h1>
-            <div className="w-24 h-[2px] bg-brand-gold mx-auto mb-8 shadow-sm"></div>
-            <p className="text-brand-cream text-lg md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-md">
+            <div className="w-24 h-[2px] bg-brand-gold mx-auto mb-4 md:mb-6 shadow-sm"></div>
+            <p className="text-brand-cream text-lg md:text-2xl max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed drop-shadow-md">
               {hero.subtext}
             </p>
             <Link 
@@ -107,8 +110,8 @@ export default async function Home() {
       </section>
 
       {/* 2. Collections Section */}
-      <section className="w-full py-24 px-8 bg-brand-cream flex flex-col items-center">
-        <FadeIn direction="up" className="text-center mb-16">
+      <section className="w-full pt-16 pb-24 px-8 bg-brand-cream flex flex-col items-center">
+        <FadeIn direction="up" className="text-center mb-10">
           <span className="text-[#856A2B] tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
             {collections.sectionTag}
           </span>
